@@ -85,9 +85,9 @@ ARG HELM2_VERSION="v2.17.0"
 # https://github.com/helm/helm/releases
 ARG HELM3_VERSION="v3.17.3"
 # https://github.com/helm/helm/releases
-ARG HELM4_VERSION="v4.1.4"
+ARG HELM4_VERSION="v4.2.3"
 # https://github.com/helmfile/helmfile/releases
-ARG HELMFILE_VERSION="1.4.4"
+ARG HELMFILE_VERSION="1.7.3"
 # https://github.com/kubernetes-sigs/kustomize/releases
 ARG KUSTOMIZE5_VERSION="5.8.1"
 # https://github.com/getsops/sops/releases
@@ -145,7 +145,7 @@ ENV PATH="${KREW_ROOT}/bin:$PATH"
 
 # plugin versions
 # https://github.com/databus23/helm-diff/releases
-ARG HELM_DIFF_VERSION="3.15.3"
+ARG HELM_DIFF_VERSION="3.15.11"
 # https://github.com/aslafy-z/helm-git/releases
 ARG HELM_GIT_VERSION="1.4.0"
 # https://github.com/jkroepke/helm-secrets/releases
