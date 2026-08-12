@@ -85,9 +85,9 @@ ARG HELM2_VERSION="v2.17.0"
 # https://github.com/helm/helm/releases
 ARG HELM3_VERSION="v3.17.3"
 # https://github.com/helm/helm/releases
-ARG HELM4_VERSION="v4.1.4"
+ARG HELM4_VERSION="v4.2.3"
 # https://github.com/helmfile/helmfile/releases
-ARG HELMFILE_VERSION="1.4.4"
+ARG HELMFILE_VERSION="1.7.3"
 # https://github.com/kubernetes-sigs/kustomize/releases
 ARG KUSTOMIZE5_VERSION="5.8.1"
 # https://github.com/getsops/sops/releases
@@ -143,9 +143,14 @@ ENV HELM_DATA_HOME=/home/argocd/helm/data
 ENV KREW_ROOT=/home/argocd/krew
 ENV PATH="${KREW_ROOT}/bin:$PATH"
 
+# `helmfile version` phones home to github.com for an update notice, and the
+# ATLAS entry point execs it on every render as a version gate — a transient
+# TLS/network failure toward github.com would fail repo-server renders.
+ENV HELMFILE_UPGRADE_NOTICE_DISABLED=1
+
 # plugin versions
 # https://github.com/databus23/helm-diff/releases
-ARG HELM_DIFF_VERSION="3.15.3"
+ARG HELM_DIFF_VERSION="3.15.11"
 # https://github.com/aslafy-z/helm-git/releases
 ARG HELM_GIT_VERSION="1.4.0"
 # https://github.com/jkroepke/helm-secrets/releases
