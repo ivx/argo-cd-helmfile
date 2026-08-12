@@ -143,6 +143,11 @@ ENV HELM_DATA_HOME=/home/argocd/helm/data
 ENV KREW_ROOT=/home/argocd/krew
 ENV PATH="${KREW_ROOT}/bin:$PATH"
 
+# `helmfile version` phones home to github.com for an update notice, and the
+# ATLAS entry point execs it on every render as a version gate — a transient
+# TLS/network failure toward github.com would fail repo-server renders.
+ENV HELMFILE_UPGRADE_NOTICE_DISABLED=1
+
 # plugin versions
 # https://github.com/databus23/helm-diff/releases
 ARG HELM_DIFF_VERSION="3.15.11"
