@@ -85,15 +85,15 @@ ARG HELM2_VERSION="v2.17.0"
 # https://github.com/helm/helm/releases
 ARG HELM3_VERSION="v3.17.3"
 # https://github.com/helm/helm/releases
-ARG HELM4_VERSION="v4.2.3"
+ARG HELM4_VERSION="v4.3.0"
 # https://github.com/helmfile/helmfile/releases
-ARG HELMFILE_VERSION="1.7.3"
+ARG HELMFILE_VERSION="1.8.1"
 # https://github.com/kubernetes-sigs/kustomize/releases
-ARG KUSTOMIZE5_VERSION="5.8.1"
+ARG KUSTOMIZE5_VERSION="5.8.3"
 # https://github.com/getsops/sops/releases
-ARG SOPS_VERSION="v3.12.2"
+ARG SOPS_VERSION="v3.13.3"
 # https://github.com/mikefarah/yq/releases
-ARG YQ_VERSION="v4.53.2"
+ARG YQ_VERSION="v4.54.1"
 
 # relevant for kubectl if installed
 ARG KUBESEAL_VERSION="0.30.0"
@@ -150,11 +150,11 @@ ENV HELMFILE_UPGRADE_NOTICE_DISABLED=1
 
 # plugin versions
 # https://github.com/databus23/helm-diff/releases
-ARG HELM_DIFF_VERSION="3.15.11"
+ARG HELM_DIFF_VERSION="3.15.15"
 # https://github.com/aslafy-z/helm-git/releases
 ARG HELM_GIT_VERSION="1.4.0"
 # https://github.com/jkroepke/helm-secrets/releases
-ARG HELM_SECRETS_VERSION="4.7.4"
+ARG HELM_SECRETS_VERSION="4.7.9"
 
 RUN \
   helm-v4 plugin install https://github.com/databus23/helm-diff   --version ${HELM_DIFF_VERSION} --verify=false && \
